@@ -3,12 +3,12 @@ mitm:
   port: 8080
 
 webdriver:
-  headless: False
-  use: edge
+  headless: True
+  use: chrome
   edge:
     bin: msedgedriver.exe
   chrome:
-    bin: chromedriver
+    bin: /Users/cwx/workspace/cwx/douyin_web_live/chromedriver
     no_sandbox: True
 
 output:
@@ -17,7 +17,7 @@ output:
     - xml
     - debug
   xml:
-    save_path: "./"
+    save_path: "./roomXml/"
     file_pattern: "{room_id}_{ts}.xml"
   debug:
     save_path:
@@ -32,4 +32,4 @@ live:
     - ""
 
 api:
-  userinfo: 'https://live.douyin.com/webcast/user/?aid=6383&target_uid='
+  userinfo: "https://live.douyin.com/webcast/user/?aid=6383&target_uid="

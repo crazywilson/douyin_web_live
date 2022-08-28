@@ -1,5 +1,6 @@
 import atexit
 import signal
+import sys
 
 from browser.manager import init_manager as init_browser_manager
 from output.manager import OutputManager
@@ -8,7 +9,7 @@ from proxy.manager import init_manager as init_proxy_manager
 if __name__ == '__main__':
     proxy_manager = init_proxy_manager()
     proxy_manager.start_loop()
-    browser_manager = init_browser_manager()
+    browser_manager = init_browser_manager(sys.argv[1])
     output_manager = OutputManager()
 
 
